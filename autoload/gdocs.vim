@@ -3,11 +3,12 @@
 " @License:     GPL (see http://www.gnu.org/licenses/gpl.txt)
 " @Created:     2010-12-10.
 " @Last Change: 2010-12-10.
-" @Revision:    72
+" @Revision:    74
 
 
 if !exists('g:gdocs#google')
     " The filename of the google command-line client.
+    " You have to log in first using googlecl before using this plugin.
     let g:gdocs#google = 'google'   "{{{2
 endif
 if !executable(g:gdocs#google)
