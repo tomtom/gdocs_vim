@@ -1,0 +1,11 @@
+This plugin provides slightly improved integration with the google 
+command line client (http://code.google.com/p/googlecl/) to edit text 
+files in vim or to save files on google docs (limited support).
+
+
+-----------------------------------------------------------------------
+
+Status:  Experimental
+Install: See http://github.com/tomtom/vimtlib/blob/master/INSTALL.TXT
+See http://github.com/tomtom for related plugins.
+

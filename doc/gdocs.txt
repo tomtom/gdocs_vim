@@ -1,0 +1,81 @@
+*gdocs.txt*         Edit google documents
+                    Author: Tom Link, micathom at gmail com
+
+This plugin provides slightly improved integration with the google 
+command line client (http://code.google.com/p/googlecl/) to edit text 
+files in vim or to save files on google docs (limited support).
+
+
+-----------------------------------------------------------------------
+Install~
+
+In order to install the vba, open the vba file in VIM and type: >
+
+    :so %
+
+See :help vimball for details.
+
+Requirement:
+    - googlecl http://code.google.com/p/googlecl/
+
+Optional enhancement:
+    - tlib (vimscript #1863)
+
+Also available via git: http://github.com/tomtom/gdocs_vim/
+
+
+========================================================================
+Contents~
+
+        :Gdocsedit ........... |:Gdocsedit|
+        :Gdocssaveas ......... |:Gdocssaveas|
+        g:gdocs#google ....... |g:gdocs#google|
+        g:gdocs#editor ....... |g:gdocs#editor|
+        g:gdocs#user ......... |g:gdocs#user|
+        gdocs#Edit ........... |gdocs#Edit()|
+        gdocs#SaveAs ......... |gdocs#SaveAs()|
+        gdocs#Complete ....... |gdocs#Complete()|
+
+
+========================================================================
+plugin/gdocs.vim~
+
+                                                    *:Gdocsedit*
+:Gdocsedit [FILENAME]
+    Edit a file. If none is given, users can select one from a list of 
+    google documents.
+
+                                                    *:Gdocssaveas*
+:Gdocssaveas [FILENAME]
+    Upload a file to google docs.
+    FILENAME defaults to the current buffer.
+
+
+========================================================================
+autoload/gdocs.vim~
+
+                                                    *g:gdocs#google*
+g:gdocs#google                 (default: 'google')
+    The filename of the google command-line client.
+
+                                                    *g:gdocs#editor*
+g:gdocs#editor                 (default: v:progname)
+    The editor comand
+
+                                                    *g:gdocs#user*
+g:gdocs#user                   (default: '')
+    The user name.
+    If empty, assume you're already authenticated.
+
+                                                    *gdocs#Edit()*
+gdocs#Edit(doc_name)
+
+                                                    *gdocs#SaveAs()*
+gdocs#SaveAs(doc_name)
+
+                                                    *gdocs#Complete()*
+gdocs#Complete(ArgLead, CmdLine, CursorPos)
+
+
+
+vim:tw=78:fo=tcq2:isk=!-~,^*,^|,^":ts=8:ft=help:norl:
