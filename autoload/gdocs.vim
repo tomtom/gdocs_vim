@@ -16,6 +16,11 @@ if !executable(g:gdocs#google)
 endif
 
 
+if !exists('g:gdocs#list_timeout')
+    " Send list request at most every N seconds.
+    let g:gdocs#list_timeout = 300   "{{{2
+endif
+
 if !exists('g:gdocs#editor')
     " The editor comand
     let g:gdocs#editor = v:progname   "{{{2
@@ -75,10 +80,15 @@ endf
 
 
 let s:docs = []
+let s:last = 0
 
 function! gdocs#Complete(ArgLead, CmdLine, CursorPos) "{{{3
-    if empty(a:ArgLead)
-        let s:docs = split(system(g:gdocs#google .' docs list'), '\n')
+    if s:last == 0 || empty(a:ArgLead)
+        let last = localtime()
+        if s:last + g:gdocs#list_timeout < last
+            let s:docs = split(system(g:gdocs#google .' docs list'), '\n')
+            let s:last = last
+        endif
     endif
     let docs = copy(s:docs)
     call map(docs, 'matchstr(v:val, ''^[^,]\+'')')
