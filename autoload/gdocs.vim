@@ -2,8 +2,8 @@
 " @Author:      Tom Link (mailto:micathom AT gmail com?subject=[vim])
 " @License:     GPL (see http://www.gnu.org/licenses/gpl.txt)
 " @Created:     2010-12-10.
-" @Last Change: 2010-12-10.
-" @Revision:    74
+" @Last Change: 2010-12-11.
+" @Revision:    83
 
 
 if !exists('g:gdocs#google')
@@ -54,6 +54,7 @@ function! gdocs#Edit(doc_name) "{{{3
         "     call add(args, '--user='. string(g:gdocs#user))
         " endif
         exec 'silent !' g:gdocs#google 'docs edit' shellescape(doc_name) join(args, ' ') '&'
+        echom 'GDocs: Opening '. string(doc_name) .' ... Please stand by ...'
     endif
 endf
 
