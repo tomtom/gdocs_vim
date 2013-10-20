@@ -15,6 +15,11 @@ In order to install the vba, open the vba file in VIM and type: >
 
 See :help vimball for details.
 
+You have to authenticate via googlecl before using this plugin. Switch to a 
+shell and run: >
+
+    google docs list
+
 Requirement:
     - googlecl http://code.google.com/p/googlecl/
 
@@ -27,14 +32,15 @@ Also available via git: http://github.com/tomtom/gdocs_vim/
 ========================================================================
 Contents~
 
-        :Gdocsedit ........... |:Gdocsedit|
-        :Gdocssaveas ......... |:Gdocssaveas|
-        g:gdocs#google ....... |g:gdocs#google|
-        g:gdocs#editor ....... |g:gdocs#editor|
-        g:gdocs#user ......... |g:gdocs#user|
-        gdocs#Edit ........... |gdocs#Edit()|
-        gdocs#SaveAs ......... |gdocs#SaveAs()|
-        gdocs#Complete ....... |gdocs#Complete()|
+        :Gdocsedit ............. |:Gdocsedit|
+        :Gdocssaveas ........... |:Gdocssaveas|
+        g:gdocs#google ......... |g:gdocs#google|
+        g:gdocs#list_timeout ... |g:gdocs#list_timeout|
+        g:gdocs#editor ......... |g:gdocs#editor|
+        g:gdocs#user ........... |g:gdocs#user|
+        gdocs#Edit ............. |gdocs#Edit()|
+        gdocs#SaveAs ........... |gdocs#SaveAs()|
+        gdocs#Complete ......... |gdocs#Complete()|
 
 
 ========================================================================
@@ -58,6 +64,10 @@ autoload/gdocs.vim~
 g:gdocs#google                 (default: 'google')
     The filename of the google command-line client.
     You have to log in first using googlecl before using this plugin.
+
+                                                    *g:gdocs#list_timeout*
+g:gdocs#list_timeout           (default: 300)
+    Send list request at most every N seconds.
 
                                                     *g:gdocs#editor*
 g:gdocs#editor                 (default: v:progname)
